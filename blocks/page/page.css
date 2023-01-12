@@ -1,3 +1,9 @@
 .page {
-  margin: 45px 200px 60px 200px;
+  margin: 45px 15.65% 60px 15.65%;
+}
+
+@media screen and (max-witdh: 425px) {
+  .page {
+    margin: 28px 6% 36px 6%;
+  }  
 }
