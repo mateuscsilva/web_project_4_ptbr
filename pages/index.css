@@ -11,5 +11,12 @@
 
 @import url('../blocks/content/content.css');
 
+@import url('../blocks/cards/cards.css');
+@import url('../blocks/cards/__information/cards__information.css');
+@import url('../blocks/cards/__item/cards__item.css');
+@import url('../blocks/cards/__like-button/cards__like-button.css');
+@import url('../blocks/cards/__picture/cards__picture.css');
+@import url('../blocks/cards/__text/cards__text.css');
+
 @import url('../blocks/footer/footer.css');
 @import url('../blocks/footer/__text/footer__text.css');
