@@ -1,5 +1,6 @@
 @import url('../styles/normalize.css');
 
+@import url('../fonts/Inter_Web/inter.css');
 @import url('../blocks/body/body.css');
 
 @import url('../blocks/page/page.css');
@@ -11,3 +12,4 @@
 @import url('../blocks/content/content.css');
 
 @import url('../blocks/footer/footer.css');
+@import url('../blocks/footer/__text/footer__text.css');
