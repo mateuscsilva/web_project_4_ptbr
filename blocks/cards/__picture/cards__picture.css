@@ -1,4 +1,4 @@
 .cards__picture {
-  width: 100%;
-  height: 282px; 
+  max-width: 100vw;
+  max-height: 282px; 
 }

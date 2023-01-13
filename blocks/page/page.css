@@ -4,6 +4,6 @@
 
 @media screen and (max-witdh: 425px) {
   .page {
-    margin: 28px 6% 36px 6%;
+    margin: 28px auto 36px auto;
   }  
 }
