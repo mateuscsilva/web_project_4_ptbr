@@ -1,0 +1,5 @@
+.profile__information {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+}

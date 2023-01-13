@@ -1,5 +1,6 @@
 .page {
   margin: 45px 15.65% 60px 15.65%;
+  max-width: 100%;
 }
 
 @media screen and (max-witdh: 425px) {
