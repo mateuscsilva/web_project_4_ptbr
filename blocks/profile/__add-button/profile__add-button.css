@@ -1,10 +1,20 @@
 .profile__add-button {
   background-color: inherit;
   background-image: url('../../../images/add_button.png');
-  width: 12vw;
+  width: 10vw;
   height: 3.5vw;
   background-size: contain;
   background-repeat: no-repeat;
   margin-right: 0;
   margin-left: auto;
+  border: none
+}
+
+@media screen and (max-width: 425px) {
+  .profile__add-button {
+    width: 80vw;
+    height: 10vw;
+    margin: 0;
+    background-size: 80vw 10vw;
+  }
 }

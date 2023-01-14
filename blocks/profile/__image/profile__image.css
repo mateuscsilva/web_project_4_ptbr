@@ -1,5 +1,13 @@
 .profile__image {
   border-radius: 50%;
-  max-width: 168px;
-  max-height: 127px;
+  max-width: 13vw;
+  max-height: 10vw;
+}
+
+@media screen and (max-width: 425px) {
+ .profile__image {
+  max-width: 52vw;
+  max-height: 40vw;
+  margin-bottom: 26px;
+ } 
 }

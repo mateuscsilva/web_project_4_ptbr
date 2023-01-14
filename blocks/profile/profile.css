@@ -4,13 +4,13 @@
   margin-bottom: 46px;
   color: white;
   align-items: center;
-  width: 100%;
 }
 
 @media screen and (max-width: 425px) {
   .profile {
     display: flex;
     flex-direction: column;
-    justify-items: center;
+    align-items: center;
+    max-width: 90vw;
   }
 }
