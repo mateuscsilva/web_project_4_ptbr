@@ -1,4 +1,5 @@
 .popup {
+  display: none;
   position: absolute;
   top: 195px;
   left: calc((100vw - 33vw)/2);
