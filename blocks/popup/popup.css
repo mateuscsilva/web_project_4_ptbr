@@ -4,3 +4,10 @@
   top: 195px;
   left: calc((100vw - 33vw)/2);
 }
+
+@media screen and (max-width: 425px) {
+  .popup {
+    top: 123px;
+    left: 19px;
+  }
+}
