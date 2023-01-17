@@ -3,6 +3,10 @@
   height: 3.125vw;
 }
 
+.popup__close-icon:hover {
+  opacity: 0.6;
+}
+
 @media screen and (max-width: 425px) {
   .popup__close-icon {
     width: 8vw;

@@ -1,3 +1,4 @@
+let page = document.querySelector('.page');
 let likeButtons = document.querySelectorAll('.cards__like-button');
 let editButton = document.querySelector('.profile__edit-button');
 let closeButton = document.querySelector('.popup__close-button');
@@ -9,6 +10,7 @@ function clickLikeButton(){
 }
 
 function openPopupWindow(){
+  page.classList.add('page__semitransparent');
   popupWindow.classList.add('popup__opened');
   let nameInput = document.querySelector('.popup__name');  
   let jobInput = document.querySelector('.popup__about');
@@ -20,6 +22,7 @@ function openPopupWindow(){
 
 function closePopupWindow(){
   popupWindow.classList.remove('popup__opened');
+  page.classList.remove('page__semitransparent');
 }
 
 function handleProfileFormSubmit(evt) {

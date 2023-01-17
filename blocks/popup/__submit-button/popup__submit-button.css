@@ -5,6 +5,10 @@
   color: white;
 }
 
+.popup__submit-button:hover {
+  opacity: 0.6;
+}
+
 @media screen and (max-width: 425px) {
   .popup__submit-button {
     height: 13vw;
