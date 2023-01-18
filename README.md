@@ -1,5 +1,17 @@
 # Projeto 4:  EUA Afora
 
+## Descrição
+
+Projeto desenvolvido seguindo o que foi proposto no curso de Desenvolvimento Web da Practicum. O projeto foi desenvolvido utilizando com html, css e javascript, seguindo os príncipios do BEM. O site conta com a utilização de textos, imagens, além do uso de um layout responsivo.
+
+## Tecnologias
+1. HTML
+2. CSS
+3. JS
+
+## Funcionalidades
+1. Layout responsivo
+
 ### Visão geral
 
 * Figma
