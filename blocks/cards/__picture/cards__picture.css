@@ -1,4 +1,4 @@
 .cards__picture {
-  max-width: 100vw;
+  max-width: inherit;
   max-height: 282px; 
 }
