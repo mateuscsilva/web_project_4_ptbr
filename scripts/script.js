@@ -34,6 +34,7 @@ function handleProfileFormSubmit(evt) {
   name.textContent = nameInput.value;
   job.textContent = jobInput.value;
   popupWindow.classList.remove('popup__opened');
+  page.classList.remove('page__semitransparent');
 }
 
 likeButtons.forEach(element => {
