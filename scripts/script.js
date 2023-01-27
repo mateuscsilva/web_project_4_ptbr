@@ -1,3 +1,45 @@
+const initialCards = [
+  {
+    name: "Vale de Yosemite",
+    link: "https://code.s3.yandex.net/web-code/yosemite.jpg"
+  },
+  {
+    name: "Lago Louise",
+    link: "https://code.s3.yandex.net/web-code/lake-louise.jpg"
+  },
+  {
+    name: "Montanhas Carecas",
+    link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg"
+  },
+  {
+    name: "Latemar",
+    link: "https://code.s3.yandex.net/web-code/latemar.jpg"
+  },
+  {
+    name: "Parque Nacional da Vanoise ",
+    link: "https://code.s3.yandex.net/web-code/vanoise.jpg"
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://code.s3.yandex.net/web-code/lago.jpg"
+  }
+];
+
+function initializeCards(initialCards){
+  const cardsContainer = document.querySelector('.cards');
+  const cardTemplate = document.querySelector("#cards__template").content;
+  initialCards.forEach(function(initialCard){
+    const newCard = cardTemplate.querySelector('.cards__item').cloneNode(true);
+    newCard.querySelector('.cards__picture').src = initialCard.link;
+    newCard.querySelector('.cards__picture').alt = initialCard.name;
+    newCard.querySelector('.cards__text').textContent = initialCard.name;
+    cardsContainer.append(newCard);
+  });
+  
+}
+
+initializeCards(initialCards);
+
 const page = document.querySelector('.page');
 const likeButtons = document.querySelectorAll('.cards__like-button');
 const editButton = document.querySelector('.profile__edit-button');
@@ -6,7 +48,7 @@ const popupWindow = document.querySelector('.popup');
 const formElement = document.querySelector('.popup__form');
 
 function clickLikeButton(){
-  this.classList.add("cards__like-button-clicked");
+  this.classList.toggle("cards__like-button-clicked");
 }
 
 function openPopupWindow(){
@@ -26,6 +68,7 @@ function closePopupWindow(){
 }
 
 function handleProfileFormSubmit(evt) {
+  
   evt.preventDefault();
   const nameInput = document.querySelector('.popup__name');  
   const jobInput = document.querySelector('.popup__about');

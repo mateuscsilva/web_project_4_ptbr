@@ -28,54 +28,15 @@
 
       <section class="cards">
         
-        <div class="cards__item">
-          <img class="cards__picture" src="images/vale_yosemite.png" alt="Foto do Vale de Yosemite">
-          <div class="cards__information">
-            <h3 class="cards__text">Vale de Yosemite</h3>
-            <button class="cards__like-button"></button>
+        <template id="cards__template">
+          <div class="cards__item">
+            <img class="cards__picture">
+            <div class="cards__information">
+              <h3 class="cards__text"></h3>
+              <button class="cards__like-button"></button>
+            </div>
           </div>
-        </div>
-
-        <div class="cards__item">
-          <img class="cards__picture" src="images/lago_louise.png" alt="Foto do lago louise">
-          <div class="cards__information">
-            <h3 class="cards__text">Lago Louise</h3>
-            <button class="cards__like-button"></button>
-          </div>
-        </div>
-
-        <div class="cards__item">
-          <img class="cards__picture" src="images/montanhas_care.png" alt="Montanhas Care">
-          <div class="cards__information">
-            <h3 class="cards__text">Montanhas Care</h3>
-            <button class="cards__like-button"></button>
-          </div>
-        </div>
-
-        <div class="cards__item">
-          <img class="cards__picture" src="images/latemar.png" alt="Foto das montanhas Latemar">
-          <div class="cards__information">
-            <h3 class="cards__text">Latemar</h3>
-            <button class="cards__like-button"></button>
-          </div>
-        </div>
-
-        <div class="cards__item">
-          <img class="cards__picture" src="images/vanoise_national_park.png" 
-            alt="Foto de lago no Parque nacional de Vanoise">
-          <div class="cards__information">
-            <h3 class="cards__text">Vanoise National Park</h3>
-            <button class="cards__like-button"></button>
-          </div>
-        </div>
-
-        <div class="cards__item">
-          <img class="cards__picture" src="images/lago_di_braies.png" alt="Lago di Braies">
-          <div class="cards__information">
-            <h3 class="cards__text">Lago di Braies</h3>
-            <button class="cards__like-button"></button>
-          </div>
-        </div>
+        </template>
 
       </section>
 

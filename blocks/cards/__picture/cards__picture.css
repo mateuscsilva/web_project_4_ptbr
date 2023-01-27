@@ -1,4 +1,13 @@
 .cards__picture {
   max-width: inherit;
-  max-height: 282px; 
+  max-height: 22vw;
+  height: 22vw; 
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 425px) {
+  .cards__picture {
+    max-height: 90vw;
+    height: 90vw;
+  }
 }
