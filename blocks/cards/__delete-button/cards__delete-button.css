@@ -1,0 +1,21 @@
+.cards__delete-button {
+  position: relative;
+  align-self: flex-end;
+  top: 40px;
+  right: 15px;
+  width: 2vw;
+  height: 2vw;
+  background-image: url('../../../images/trash_button.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  z-index: 1;
+}
+
+@media screen and (max-width: 425px) {
+  .cards__delete-button {
+    width: 7vw;
+    height: 7vw;
+  }
+}

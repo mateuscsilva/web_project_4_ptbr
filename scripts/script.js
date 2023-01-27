@@ -46,9 +46,14 @@ const editButton = document.querySelector('.profile__edit-button');
 const closeButton = document.querySelector('.popup__close-button');
 const popupWindow = document.querySelector('.popup');
 const formElement = document.querySelector('.popup__form');
+const deleteButtons = document.querySelectorAll('.cards__delete-button');
 
 function clickLikeButton(){
   this.classList.toggle("cards__like-button-clicked");
+}
+
+function clickDeleteButton(evt){
+  evt.target.closest('.cards__item').remove();
 }
 
 function openPopupWindow(){
@@ -82,6 +87,10 @@ function handleProfileFormSubmit(evt) {
 
 likeButtons.forEach(element => {
   element.addEventListener("click", clickLikeButton);
+});
+
+deleteButtons.forEach(element => {
+  element.addEventListener("click", clickDeleteButton);
 });
 
 editButton.addEventListener("click", openPopupWindow);
