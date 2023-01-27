@@ -48,8 +48,8 @@
     </footer>
   </div>
 
-  <div class="popup">
-    <button class="popup__close-button">
+  <div class="popup popup-edit">
+    <button class="popup__close-button popup__close-edit-button">
       <img class="popup__close-icon" src="images/close_icon.svg" alt="Butão para fechar">
     </button>
     <div class="popup__container">
@@ -59,6 +59,22 @@
           <input class="popup__name" type="text" name="name" value="Nome"/>
           <input class="popup__about" type="text" name="about" value="Sobre mim"/>
           <input class="popup__submit-button" type="submit" value="Salvar"/>
+        </form>
+     </div>
+    </div>
+  </div>
+
+  <div class="popup popup-add">
+    <button class="popup__close-button popup__close-add-button">
+      <img class="popup__close-icon" src="images/close_icon.svg" alt="Butão para fechar">
+    </button>
+    <div class="popup__container">
+      <div class="popup__items">
+        <h3 class="popup__title">Novo local</h3>
+        <form class="popup__form">
+          <input class="popup__name" type="text" name="name" value="Título"/>
+          <input class="popup__about" type="text" name="about" value="Link"/>
+          <input class="popup__submit-button" type="submit" value="Criar"/>
         </form>
      </div>
     </div>

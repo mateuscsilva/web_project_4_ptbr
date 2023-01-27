@@ -43,8 +43,11 @@ initializeCards(initialCards);
 const page = document.querySelector('.page');
 const likeButtons = document.querySelectorAll('.cards__like-button');
 const editButton = document.querySelector('.profile__edit-button');
-const closeButton = document.querySelector('.popup__close-button');
-const popupWindow = document.querySelector('.popup');
+const addButton = document.querySelector('.profile__add-button');
+const closeButton = document.querySelector('.popup__close-edit-button');
+const closeButtonAdd = document.querySelector('.popup__close-add-button');
+const popupWindow = document.querySelector('.popup-edit');
+const popupAddWindow = document.querySelector('.popup-add');
 const formElement = document.querySelector('.popup__form');
 const deleteButtons = document.querySelectorAll('.cards__delete-button');
 
@@ -67,8 +70,18 @@ function openPopupWindow(){
   jobInput.value = job.textContent;
 }
 
+function openAddPopupWindow(){
+  page.classList.add('page__semitransparent');
+  popupAddWindow.classList.add('popup__opened');
+}
+
 function closePopupWindow(){
   popupWindow.classList.remove('popup__opened');
+  page.classList.remove('page__semitransparent');
+}
+
+function closeAddPopupWindow(){
+  popupAddWindow.classList.remove('popup__opened');
   page.classList.remove('page__semitransparent');
 }
 
@@ -94,5 +107,7 @@ deleteButtons.forEach(element => {
 });
 
 editButton.addEventListener("click", openPopupWindow);
+addButton.addEventListener("click", openAddPopupWindow);
 closeButton.addEventListener("click", closePopupWindow);
+closeButtonAdd.addEventListener("click", closeAddPopupWindow);
 formElement.addEventListener("submit", handleProfileFormSubmit); 
