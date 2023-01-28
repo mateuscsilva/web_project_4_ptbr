@@ -3,6 +3,7 @@
   height: 3vw;
   background-color: black;
   color: white;
+  cursor: pointer;
 }
 
 .popup__submit-button:hover {

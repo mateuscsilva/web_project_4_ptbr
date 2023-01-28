@@ -35,8 +35,20 @@ function initializeCards(initialCards){
     newCard.querySelector('.cards__text').textContent = initialCard.name;
     cardsContainer.append(newCard);
   });
-  
 }
+
+function addCard(card){
+  const cardsContainer = document.querySelector('.cards');
+  const cardTemplate = document.querySelector("#cards__template").content;
+  const newCard = cardTemplate.querySelector('.cards__item').cloneNode(true);
+  newCard.querySelector('.cards__picture').src = card.link;
+  newCard.querySelector('.cards__picture').alt = card.name;
+  newCard.querySelector('.cards__text').textContent = card.name;
+  newCard.querySelector('.cards__delete-button').addEventListener("click", clickDeleteButton);
+  cardsContainer.prepend(newCard);
+
+}
+
 
 initializeCards(initialCards);
 
@@ -49,6 +61,7 @@ const closeButtonAdd = document.querySelector('.popup__close-add-button');
 const popupWindow = document.querySelector('.popup-edit');
 const popupAddWindow = document.querySelector('.popup-add');
 const formElement = document.querySelector('.popup__form');
+const formAddElement = document.querySelector('.popup__form-add');
 const deleteButtons = document.querySelectorAll('.cards__delete-button');
 
 function clickLikeButton(){
@@ -98,6 +111,16 @@ function handleProfileFormSubmit(evt) {
   page.classList.remove('page__semitransparent');
 }
 
+function handleLocationFormSubmit(evt) {
+  
+  evt.preventDefault();
+  const titleInput = document.querySelector('.popup__location');
+  const linkInput = document.querySelector('.popup__link');
+  addCard({name: titleInput.value, link: linkInput.value});
+  popupAddWindow.classList.remove('popup__opened');
+  page.classList.remove('page__semitransparent');
+}
+
 likeButtons.forEach(element => {
   element.addEventListener("click", clickLikeButton);
 });
@@ -111,3 +134,4 @@ addButton.addEventListener("click", openAddPopupWindow);
 closeButton.addEventListener("click", closePopupWindow);
 closeButtonAdd.addEventListener("click", closeAddPopupWindow);
 formElement.addEventListener("submit", handleProfileFormSubmit); 
+formAddElement.addEventListener("submit", handleLocationFormSubmit); 

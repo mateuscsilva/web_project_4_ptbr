@@ -1,3 +1,8 @@
+@keyframes semitransparent {
+  from {opacity: 1;}
+  to {opacity: 0.8;}
+} 
+
 .page__semitransparent {
-  opacity: 0.9;
+  animation: semitransparent 1s linear forwards;
 }
