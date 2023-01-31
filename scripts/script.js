@@ -33,6 +33,7 @@ function initializeCards(initialCards){
     newCard.querySelector('.cards__picture').src = initialCard.link;
     newCard.querySelector('.cards__picture').alt = initialCard.name;
     newCard.querySelector('.cards__text').textContent = initialCard.name;
+    newCard.querySelector('.cards__picture-button').addEventListener("click", openPicture);
     cardsContainer.append(newCard);
   });
 }
@@ -45,6 +46,7 @@ function addCard(card){
   newCard.querySelector('.cards__picture').alt = card.name;
   newCard.querySelector('.cards__text').textContent = card.name;
   newCard.querySelector('.cards__delete-button').addEventListener("click", clickDeleteButton);
+  newCard.querySelector('.cards__picture-button').addEventListener("click", openPicture);
   cardsContainer.prepend(newCard);
 
 }
@@ -58,11 +60,14 @@ const editButton = document.querySelector('.profile__edit-button');
 const addButton = document.querySelector('.profile__add-button');
 const closeButton = document.querySelector('.popup__close-edit-button');
 const closeButtonAdd = document.querySelector('.popup__close-add-button');
+const closeButtonImage = document.querySelector('.popup__close-image-button');
 const popupWindow = document.querySelector('.popup-edit');
 const popupAddWindow = document.querySelector('.popup-add');
+const popupImage = document.querySelector('.popup-image');
 const formElement = document.querySelector('.popup__form');
 const formAddElement = document.querySelector('.popup__form-add');
 const deleteButtons = document.querySelectorAll('.cards__delete-button');
+
 
 function clickLikeButton(){
   this.classList.toggle("cards__like-button-clicked");
@@ -88,6 +93,11 @@ function openAddPopupWindow(){
   popupAddWindow.classList.add('popup__opened');
 }
 
+function openPicture(){
+  page.classList.add('page__semitransparent');
+  popupImage.classList.add('popup__opened');
+}
+
 function closePopupWindow(){
   popupWindow.classList.remove('popup__opened');
   page.classList.remove('page__semitransparent');
@@ -95,6 +105,11 @@ function closePopupWindow(){
 
 function closeAddPopupWindow(){
   popupAddWindow.classList.remove('popup__opened');
+  page.classList.remove('page__semitransparent');
+}
+
+function closePopupImage(){
+  popupImage.classList.remove('popup__opened');
   page.classList.remove('page__semitransparent');
 }
 
@@ -133,5 +148,6 @@ editButton.addEventListener("click", openPopupWindow);
 addButton.addEventListener("click", openAddPopupWindow);
 closeButton.addEventListener("click", closePopupWindow);
 closeButtonAdd.addEventListener("click", closeAddPopupWindow);
-formElement.addEventListener("submit", handleProfileFormSubmit); 
-formAddElement.addEventListener("submit", handleLocationFormSubmit); 
+formElement.addEventListener("submit", handleProfileFormSubmit);
+formAddElement.addEventListener("submit", handleLocationFormSubmit);
+closeButtonImage.addEventListener("click", closePopupImage);

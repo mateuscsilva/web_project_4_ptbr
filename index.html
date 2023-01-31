@@ -31,7 +31,9 @@
         <template id="cards__template">
           <div class="cards__item">
             <button class="cards__delete-button"></button>
-            <img class="cards__picture">
+            <button class="cards__picture-button">
+              <img class="cards__picture">
+            </button>
             <div class="cards__information">
               <h3 class="cards__text"></h3>
               <button class="cards__like-button"></button>
@@ -78,6 +80,14 @@
         </form>
      </div>
     </div>
+  </div>
+
+  <div class="popup popup-image">
+    <button class="popup__close-button popup__close-image-button">
+      <img class="popup__close-icon" src="images/close_icon.svg" alt="Butão para fechar">
+    </button>
+    <img class="popup__display-image" src="https://code.s3.yandex.net/web-code/lago.jpg" alt="">
+    <h3 class="popup__text"></h3>
   </div>
   
   <script src="scripts/script.js"></script>
