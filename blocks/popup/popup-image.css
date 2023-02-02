@@ -1,13 +1,18 @@
 .popup-image {
-  width: 45vw;
-  height: 33vw;
+  max-width: 80vw;
+  max-height: 80vh;
   margin-left: auto;
   margin-right: auto;
+  position: fixed;
+  top: 10%;
+  z-index: 2;
 }
 
 @media screen and (max-width: 425px) {
   .popup-image {
     width: 92vw;
-    height: 75vw;
+    height: 95vw;
+    position: fixed;
+    top: 20%;
   }
 }

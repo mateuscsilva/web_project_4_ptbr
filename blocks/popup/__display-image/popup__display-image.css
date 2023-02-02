@@ -1,3 +1,5 @@
 .popup__display-image {
-  width: 92%;
+  max-width: 75vw;
+  max-height: 75vh;
+  object-fit: fill;
 }

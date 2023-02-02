@@ -26,6 +26,14 @@
         <button class="profile__add-button"></button>
       </section>
 
+      <section class="popup popup-image">
+        <button class="popup__close-button popup__close-image-button">
+          <img class="popup__close-icon" src="images/close_icon.svg" alt="Butão para fechar">
+        </button>
+        <img class="popup__display-image" src="https://code.s3.yandex.net/web-code/lago.jpg" alt="">
+        <h3 class="popup__text"></h3>
+      </section>
+
       <section class="cards">
         
         <template id="cards__template">
@@ -75,19 +83,11 @@
         <h3 class="popup__title">Novo local</h3>
         <form class="popup__form popup__form-add">
           <input class="popup__name  popup__location" type="text" name="name" value="Título"/>
-          <input class="popup__about popup__link" type="text" name="about" value="Link"/>
+          <input class="popup__about popup__link" type="text" name="about" value="Link da imagem"/>
           <input class="popup__submit-button popup__create-button" type="submit" value="Criar"/>
         </form>
      </div>
     </div>
-  </div>
-
-  <div class="popup popup-image">
-    <button class="popup__close-button popup__close-image-button">
-      <img class="popup__close-icon" src="images/close_icon.svg" alt="Butão para fechar">
-    </button>
-    <img class="popup__display-image" src="https://code.s3.yandex.net/web-code/lago.jpg" alt="">
-    <h3 class="popup__text"></h3>
   </div>
   
   <script src="scripts/script.js"></script>

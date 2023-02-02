@@ -8,7 +8,7 @@
 
 @media screen and (max-width: 425px) {
   .cards__picture {
-    max-height: 90%;
-    height: 90%;
+    max-height: 100%;
+    height: 100%;
   }
 }

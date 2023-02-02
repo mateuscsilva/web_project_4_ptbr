@@ -93,7 +93,12 @@ function openAddPopupWindow(){
   popupAddWindow.classList.add('popup__opened');
 }
 
-function openPicture(){
+function openPicture(evt){
+  let displayImage = document.querySelector('.popup__display-image');
+  let popupText = document.querySelector('.popup__text');
+  popupText.textContent = evt.target.alt;
+  displayImage.src = evt.target.src;
+  displayImage.alt = evt.target.alt;
   page.classList.add('page__semitransparent');
   popupImage.classList.add('popup__opened');
 }
