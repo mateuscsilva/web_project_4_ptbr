@@ -58,38 +58,51 @@
     </footer>
   </div>
 
-  <div class="popup popup-edit">
+  <div class="popup-edit popup">
     <button class="popup__close-button popup__close-edit-button">
       <img class="popup__close-icon" src="images/close_icon.svg" alt="Butão para fechar">
     </button>
     <div class="popup__container">
       <div class="popup__items">
         <h3 class="popup__title">Editar perfil</h3>
-        <form class="popup__form">
-          <input class="popup__name" type="text" name="name" value="Nome"/>
-          <input class="popup__about" type="text" name="about" value="Sobre mim"/>
-          <input class="popup__submit-button" type="submit" value="Salvar"/>
+        <form class="form popup__form" novalidate>
+          <div class="form__group">
+            <input id="name-input" class="form__input popup__name" type="text" name="name" value="Nome" minlength="2" maxlength="40" required/>
+            <span class="name-input-error form__input-error">Preencha este campo</span>
+          </div>
+          <div class="form__group">
+            <input id="about-input" class="form__input popup__about" type="text" name="about" value="Sobre mim" minlength="2" maxlength="200" required/>
+            <span class="about-input-error form__input-error">Preencha este campo</span>
+          </div>
+          <input class="form__submit popup__submit-button" type="submit" value="Salvar"/>
         </form>
      </div>
     </div>
   </div>
 
-  <div class="popup popup-add">
+  <div class="popup-add popup">
     <button class="popup__close-button popup__close-add-button">
       <img class="popup__close-icon" src="images/close_icon.svg" alt="Butão para fechar">
     </button>
     <div class="popup__container">
       <div class="popup__items">
         <h3 class="popup__title">Novo local</h3>
-        <form class="popup__form popup__form-add">
-          <input class="popup__name  popup__location" type="text" name="name" value="Título"/>
-          <input class="popup__about popup__link" type="text" name="about" value="Link da imagem"/>
-          <input class="popup__submit-button popup__create-button" type="submit" value="Criar"/>
+        <form class="form popup__form popup__form-add" novalidate>
+          <div class="form__group">
+            <input id="location-input" class="form__input popup__name  popup__location" type="text" name="name" value="Título" minlength="2" maxlength="30" required/>
+            <span class="location-input-error form__input-error">Preencha este campo</span>
+          </div>
+          <div class="form__group">
+            <input id="link-input" class="form__input popup__about popup__link" type="url" name="about" value="Link da imagem" required/>
+            <span class="link-input-error form__input-error">Preencha este campo</span>
+          </div>
+          <input class="form__submit popup__submit-button popup__create-button" type="submit" value="Criar"/>
         </form>
      </div>
     </div>
   </div>
   
   <script src="scripts/script.js"></script>
+  <script src="scripts/validate.js"></script>
 </body>
 </html>

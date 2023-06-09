@@ -78,19 +78,25 @@ function clickDeleteButton(evt){
 }
 
 function openPopupWindow(){
-  page.classList.add('page__semitransparent');
-  popupWindow.classList.add('popup__opened');
-  const nameInput = document.querySelector('.popup__name');  
-  const jobInput = document.querySelector('.popup__about');
-  const name = document.querySelector('.profile__name');
-  const job = document.querySelector('.profile__work');
-  nameInput.value = name.textContent;
-  jobInput.value = job.textContent;
+  setTimeout(() => {
+    page.classList.add('page__semitransparent');
+    popupWindow.classList.add('popup__opened');
+    const nameInput = document.querySelector('.popup__name');  
+    const jobInput = document.querySelector('.popup__about');
+    const name = document.querySelector('.profile__name');
+    const job = document.querySelector('.profile__work');
+    nameInput.value = name.textContent;
+    jobInput.value = job.textContent;
+  }, 250);
+  
 }
 
 function openAddPopupWindow(){
-  page.classList.add('page__semitransparent');
-  popupAddWindow.classList.add('popup__opened');
+  setTimeout(() => {
+    page.classList.add('page__semitransparent');
+    popupAddWindow.classList.add('popup__opened');
+  }, 250);
+  
 }
 
 function openPicture(evt){
@@ -147,6 +153,20 @@ likeButtons.forEach(element => {
 
 deleteButtons.forEach(element => {
   element.addEventListener("click", clickDeleteButton);
+});
+
+document.addEventListener("click", (e) => {
+  const isClosest = e.target.closest(".popup");
+  const popupEdit = document.querySelector(".popup-edit")
+  const popupAdd = document.querySelector(".popup-add")
+  if (!isClosest && popupEdit.classList.contains("popup__opened")) {
+    popupEdit.classList.remove("popup__opened");
+    page.classList.remove('page__semitransparent');
+  }
+  if (!isClosest && popupAdd.classList.contains("popup__opened")) {
+    popupAdd.classList.remove("popup__opened");
+    page.classList.remove('page__semitransparent');
+  }
 });
 
 editButton.addEventListener("click", openPopupWindow);
