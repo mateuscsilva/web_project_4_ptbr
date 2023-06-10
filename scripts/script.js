@@ -100,8 +100,8 @@ function openAddPopupWindow(){
 }
 
 function openPicture(evt){
-  let displayImage = document.querySelector('.popup__display-image');
-  let popupText = document.querySelector('.popup__text');
+  const displayImage = document.querySelector('.popup__display-image');
+  const popupText = document.querySelector('.popup__text');
   popupText.textContent = evt.target.alt;
   displayImage.src = evt.target.src;
   displayImage.alt = evt.target.alt;
@@ -169,6 +169,18 @@ document.addEventListener("click", (e) => {
   }
 });
 
+function closeWindow(e){
+  if(e.key === "Escape"){
+    const popupEdit = document.querySelector(".popup-edit")
+    const popupAdd = document.querySelector(".popup-add")
+    if(popupEdit.classList.contains("popup__opened")){
+      closePopupWindow();
+    }else if(popupAdd.classList.contains("popup__opened")){
+      closeAddPopupWindow();
+    }
+  }
+}
+
 editButton.addEventListener("click", openPopupWindow);
 addButton.addEventListener("click", openAddPopupWindow);
 closeButton.addEventListener("click", closePopupWindow);
@@ -176,3 +188,4 @@ closeButtonAdd.addEventListener("click", closeAddPopupWindow);
 formElement.addEventListener("submit", handleProfileFormSubmit);
 formAddElement.addEventListener("submit", handleLocationFormSubmit);
 closeButtonImage.addEventListener("click", closePopupImage);
+document.addEventListener("keydown", closeWindow);

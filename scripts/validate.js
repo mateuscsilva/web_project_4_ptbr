@@ -14,7 +14,8 @@ const hideInputError = (formElement, inputElement) => {
 
 const checkInputValidity = (formElement, inputElement) => {
   if (!inputElement.validity.valid) {
-    showInputError(formElement, inputElement, inputElement.validationMessage);
+    const messageElement = formElement.querySelector(`.${inputElement.id}-error`);
+    showInputError(formElement, inputElement, messageElement.textContent);
   } else {
     hideInputError(formElement, inputElement);
   }

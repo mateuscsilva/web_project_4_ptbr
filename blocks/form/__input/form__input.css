@@ -5,11 +5,13 @@
 .form__input-error {
   color: red;
   padding: 0;
+  height: 10px;
   visibility: hidden;
 }
 
 .form__input-error_active{
   color: red;
   padding: 0;
+  height: 10px;
   visibility: visible;
 }

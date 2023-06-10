@@ -13,7 +13,7 @@ Projeto desenvolvido seguindo o que foi proposto no curso de Desenvolvimento Web
 1. Layout responsivo
 
 ## Link
-. https://mateuscsilva.github.io/web_project_4_ptbr/
+- https://mateuscsilva.github.io/web_project_4_ptbr/
 
 ### Visão geral
 
