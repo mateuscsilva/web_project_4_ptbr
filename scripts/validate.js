@@ -1,3 +1,16 @@
+const translationsInPT = {
+  text: {
+    tooShort: "Mínimo de 2 caracteres ou mais",
+    valueMissing: "Preencha este campo",
+    typeMismatch: "Insira um texto"
+  },
+  url: {
+    tooShort: "Por favor, insira um endereço web",
+    valueMissing: "Por favor, insira um endereço web",
+    typeMismatch: "Por favor, insira um endereço web"
+  }
+}
+
 const showInputError = (formElement, inputElement, errorMessage) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add("form__input_type_error");
@@ -14,8 +27,16 @@ const hideInputError = (formElement, inputElement) => {
 
 const checkInputValidity = (formElement, inputElement) => {
   if (!inputElement.validity.valid) {
-    const messageElement = formElement.querySelector(`.${inputElement.id}-error`);
-    showInputError(formElement, inputElement, messageElement.textContent);
+    validationMessage = inputElement.validationMessage;
+    if(inputElement.validity.tooShort){
+      validationMessage = translationsInPT[inputElement.type]['tooShort']
+    }else if(inputElement.validity.valueMissing){
+      validationMessage = translationsInPT[inputElement.type]['valueMissing']
+    }else if(inputElement.validity.typeMismatch){
+      validationMessage = translationsInPT[inputElement.type]['typeMismatch']
+    }
+    
+    showInputError(formElement, inputElement, validationMessage);
   } else {
     hideInputError(formElement, inputElement);
   }

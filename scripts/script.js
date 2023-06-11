@@ -100,13 +100,15 @@ function openAddPopupWindow(){
 }
 
 function openPicture(evt){
-  const displayImage = document.querySelector('.popup__display-image');
-  const popupText = document.querySelector('.popup__text');
-  popupText.textContent = evt.target.alt;
-  displayImage.src = evt.target.src;
-  displayImage.alt = evt.target.alt;
-  page.classList.add('page__semitransparent');
-  popupImage.classList.add('popup__opened');
+  setTimeout(() => {
+    const displayImage = document.querySelector('.popup__display-image');
+    const popupText = document.querySelector('.popup__text');
+    popupText.textContent = evt.target.alt;
+    displayImage.src = evt.target.src;
+    displayImage.alt = evt.target.alt;
+    page.classList.add('page__semitransparent');
+    popupImage.classList.add('popup__opened');
+  }, 250);
 }
 
 function closePopupWindow(){
@@ -167,6 +169,10 @@ document.addEventListener("click", (e) => {
     popupAdd.classList.remove("popup__opened");
     page.classList.remove('page__semitransparent');
   }
+  if (!isClosest && popupImage.classList.contains("popup__opened")){
+    popupImage.classList.remove('popup__opened');
+    page.classList.remove('page__semitransparent');
+  }
 });
 
 function closeWindow(e){
@@ -177,6 +183,8 @@ function closeWindow(e){
       closePopupWindow();
     }else if(popupAdd.classList.contains("popup__opened")){
       closeAddPopupWindow();
+    }else if(popupImage.classList.contains("popup__opened")){
+      closePopupImage();
     }
   }
 }
