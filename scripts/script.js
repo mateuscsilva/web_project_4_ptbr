@@ -28,6 +28,18 @@ const initialCards = [
   }
 ];
 
+const page = document.querySelector('.page');
+const editButton = document.querySelector('.profile__edit-button');
+const addButton = document.querySelector('.profile__add-button');
+const closeButton = document.querySelector('.popup__close-edit-button');
+const closeButtonAdd = document.querySelector('.popup__close-add-button');
+const closeButtonImage = document.querySelector('.popup__close-image-button');
+const popupWindow = document.querySelector('.popup-edit');
+const popupAddWindow = document.querySelector('.popup-add');
+const popupImage = document.querySelector('.popup-image');
+const formElement = document.querySelector('.popup__form');
+const formAddElement = document.querySelector('.popup__form-add');
+
 function initializeCards(initialCards){
   const cardsContainer = document.querySelector('.cards');
   //const cardTemplate = document.querySelector("#cards__template").content;
@@ -41,6 +53,22 @@ function initializeCards(initialCards){
     //newCard.querySelector('.cards__picture-button').addEventListener("click", openPicture);
     cardsContainer.append(cardElement);
   });
+}
+
+function initalizeFormValidation(){
+  const data = {
+    inputSelector: ".form__input",
+    submitButtonSelector: ".form__submit",
+    inactiveButtonClass: "popup__button_disabled",
+    inputErrorClass: "form__input_type_error",
+    buttonInactiveClass: "button__inactive",
+    errorClass: "form__error_visible",
+    inputErrorClassActive: "form__input-error_active"
+  } ;
+  const editForm = new FormValidator(data,".popup__form-edit")
+  editForm.enableValidation();
+  const addForm = new FormValidator(data,".popup__form-add")
+  addForm.enableValidation();
 }
 
 // function addCard(card){
@@ -60,19 +88,7 @@ function initializeCards(initialCards){
 
 
 initializeCards(initialCards);
-
-const page = document.querySelector('.page');
-const editButton = document.querySelector('.profile__edit-button');
-const addButton = document.querySelector('.profile__add-button');
-const closeButton = document.querySelector('.popup__close-edit-button');
-const closeButtonAdd = document.querySelector('.popup__close-add-button');
-const closeButtonImage = document.querySelector('.popup__close-image-button');
-const popupWindow = document.querySelector('.popup-edit');
-const popupAddWindow = document.querySelector('.popup-add');
-const popupImage = document.querySelector('.popup-image');
-const formElement = document.querySelector('.popup__form');
-const formAddElement = document.querySelector('.popup__form-add');
-
+initalizeFormValidation()
 
 // function openPopupWindow(){
 //   setTimeout(() => {

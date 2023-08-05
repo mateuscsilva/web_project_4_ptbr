@@ -27,7 +27,7 @@ const hideInputError = (formElement, inputElement) => {
 
 const checkInputValidity = (formElement, inputElement) => {
   if (!inputElement.validity.valid) {
-    validationMessage = inputElement.validationMessage;
+    let validationMessage = inputElement.validationMessage;
     if(inputElement.validity.tooShort){
       validationMessage = translationsInPT[inputElement.type]['tooShort']
     }else if(inputElement.validity.valueMissing){
@@ -74,12 +74,14 @@ const setEventListeners = (formElement) => {
 
 const enableValidation = (validationElements) => {
   const formList = Array.from(document.querySelectorAll(validationElements.formSelector));
-  formList.forEach((formElement) => {
+  /*formList.forEach((formElement) => {
+    if(!formElement.classList.contains("popup__form-edit")){
     formElement.addEventListener("submit", function (evt) {
       evt.preventDefault();
     });
     setEventListeners(formElement);
-  });
+    }
+  });*/
 };
 
 enableValidation({
