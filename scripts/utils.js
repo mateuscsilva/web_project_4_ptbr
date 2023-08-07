@@ -16,13 +16,6 @@ function addCard(card){
   const cardsContainer = document.querySelector('.cards');
   const newCard = new Card({name: card.name, link: card.link}, ".cards__item");
   const cardElement = newCard.generateCard();
-  //const cardTemplate = document.querySelector("#cards__template").content;
-  //const newCard = cardTemplate.querySelector('.cards__item').cloneNode(true);
-  //newCard.querySelector('.cards__picture').src = card.link;
-  //newCard.querySelector('.cards__picture').alt = card.name;
-  //newCard.querySelector('.cards__text').textContent = card.name;
-  //newCard.querySelector('.cards__delete-button').addEventListener("click", clickDeleteButton);
-  //newCard.querySelector('.cards__picture-button').addEventListener("click", openPicture);
   cardsContainer.prepend(cardElement);
 
 }
