@@ -1,5 +1,8 @@
-import Card from "./card.js";
-import FormValidator from "./FormValidator.js";
+import "./page/index.css";
+import "./script/utils.js";
+import Card from "./script/card.js";
+import FormValidator from "./script/FormValidator.js";
+import Section from "./script/Section";
 
 const initialCards = [
   {
@@ -41,12 +44,21 @@ const formElement = document.querySelector('.popup__form');
 const formAddElement = document.querySelector('.popup__form-add');
 
 function initializeCards(initialCards){
-  const cardsContainer = document.querySelector('.cards');
-  initialCards.forEach(function(initialCard){
-    const newCard = new Card(initialCard, ".cards__item");
-    const cardElement = newCard.generateCard();
-    cardsContainer.append(cardElement);
-  });
+  const cardsContainer = new Section({
+    item: initialCards, 
+    renderer: (item)=>{
+      const newCard = new Card(item, ".cards__item");
+      const cardElement = newCard.generateCard();
+      cardsContainer.addItem(cardElement);
+    }},
+    '.cards');
+    cardsContainer.renderer();
+  //const cardsContainer = document.querySelector('.cards');
+  //initialCards.forEach(function(initialCard){
+  //  const newCard = new Card(initialCard, ".cards__item");
+  //  const cardElement = newCard.generateCard();
+  //  cardsContainer.append(cardElement);
+  //});
 }
 
 function initalizeFormValidation(){

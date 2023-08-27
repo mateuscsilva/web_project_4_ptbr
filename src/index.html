@@ -3,19 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./pages/index.css" />
   <title>EUA Afora</title>
 </head>
 <body>
   <div class="page">
     <header class="header">
-      <img class="header__logo" src="images/logo_vector.png" alt="Logo Around The US">
+      <img class="header__logo" src="<%=require('./images/logo_vector.png')%>" alt="Logo Around The US">
       <div class="header__line"></div>
     </header>
     <main class="content">
 
       <section class="profile">
-        <img class="profile__image" src="images/profile_image.png" alt="Imagem de perfil">
+        <img class="profile__image" src="<%=require('./images/profile_image.png')%>" alt="Imagem de perfil">
         <div class="profile__information">
           <div class="profile__name-group">
             <h2 class="profile__name">Jacques Cousteau</h2>
@@ -28,7 +27,7 @@
 
       <section class="popup popup-image">
         <button class="popup__close-button popup__close-image-button">
-          <img class="popup__close-icon" src="images/close_icon.svg" alt="Butão para fechar">
+          <img class="popup__close-icon" src="<%=require('./images/close_icon.svg')%>" alt="Butão para fechar">
         </button>
         <img class="popup__display-image" src="https://code.s3.yandex.net/web-code/lago.jpg" alt="Imagem do Lago di Braies">
         <h3 class="popup__text"></h3>
@@ -60,7 +59,7 @@
 
   <div class="popup-edit popup">
     <button class="popup__close-button popup__close-edit-button">
-      <img class="popup__close-icon" src="images/close_icon.svg" alt="Butão para fechar">
+      <img class="popup__close-icon" src="<%=require('./images/close_icon.svg')%>" alt="Butão para fechar">
     </button>
     <div class="popup__container">
       <div class="popup__items">
@@ -82,7 +81,7 @@
 
   <div class="popup-add popup">
     <button class="popup__close-button popup__close-add-button">
-      <img class="popup__close-icon" src="images/close_icon.svg" alt="Butão para fechar">
+      <img class="popup__close-icon" src="<%=require('./images/close_icon.svg')%>" alt="Butão para fechar">
     </button>
     <div class="popup__container">
       <div class="popup__items">
@@ -101,8 +100,5 @@
      </div>
     </div>
   </div>
-  
-  <script type="module" src="scripts/utils.js"></script>
-  <script type="module" src="scripts/script.js"></script>
 </body>
 </html>

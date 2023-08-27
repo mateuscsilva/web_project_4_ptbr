@@ -1,3 +1,5 @@
+import PopupWithImage from "./PopupWithImage";
+
 class Card {
   constructor(data, templateName){
     this._name = data.name;
@@ -14,6 +16,9 @@ class Card {
   }
 
   _openPicture(evt){
+    const popupImage = new PopupWithImage('.popup-image');
+    popupImage.open(evt);
+    /*
     setTimeout(() => {
       const page = document.querySelector('.page');
       const popupImage = document.querySelector('.popup-image');
@@ -25,6 +30,7 @@ class Card {
       page.classList.add('page__semitransparent');
       popupImage.classList.add('popup__opened');
     }, 250);
+    */
   }
 
   _clickLikeButton(){
