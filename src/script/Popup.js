@@ -3,7 +3,7 @@ export default class Popup{
     this._selector = selector;
     this._container = document.querySelector(selector);
     this._page = document.querySelector('.page');
-    this._closeButton = document.querySelector('.popup__close-image-button');
+    this._closeButton = document.querySelector(selector).children[0];
   }
 
   open(){
@@ -13,7 +13,7 @@ export default class Popup{
     }, 50);
   }
 
-  close(){
+  close(){ 
     this._page.classList.remove('page__semitransparent');
     this._container.classList.remove('popup__opened');
   }
@@ -25,12 +25,18 @@ export default class Popup{
   }
 
   setEventListeners(){
-    this._closeButton.addEventListener("click", this.close);
+    this._closeButton.addEventListener("click", (e) => {
+      const isClosest = e.target.closest(this._selector);
+      if (isClosest) {
+        this.close();
+      }
+    });
     document.addEventListener("click", (e) => {
       const isClosest = e.target.closest(this._selector);
       if (!isClosest) {
         this.close();
       }
     });
+    document.addEventListener("keydown", this._handleEscClose.bind(this));
   }
 }

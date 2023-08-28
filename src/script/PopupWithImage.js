@@ -6,6 +6,7 @@ export default class PopupWithImage extends Popup{
   }
 
   open(evt){
+    super.setEventListeners();
     setTimeout(() => { 
       const displayImage = document.querySelector('.popup__display-image');
       const popupText = document.querySelector('.popup__text');
@@ -16,5 +17,6 @@ export default class PopupWithImage extends Popup{
       //this._page.classList.add('page__semitransparent');
       //this._container.classList.add('popup__opened');
     }, 250);
+    
   }
 }

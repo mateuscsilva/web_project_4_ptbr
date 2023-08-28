@@ -7,14 +7,6 @@ class Card {
     this._templateName = templateName;
   }
 
-  _clickLikeButton(){
-    this.classList.toggle("cards__like-button-clicked");
-  }
-  
-  _clickDeleteButton(evt){
-    evt.target.closest('.cards__item').remove();
-  }
-
   _openPicture(evt){
     const popupImage = new PopupWithImage('.popup-image');
     popupImage.open(evt);

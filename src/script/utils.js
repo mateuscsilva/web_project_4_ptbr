@@ -1,4 +1,5 @@
 import Card from "./card.js";
+import PopupWithForms from "./PopupWithForms";
 
 const page = document.querySelector('.page');
 const editButton = document.querySelector('.profile__edit-button');
@@ -11,6 +12,19 @@ const popupAddWindow = document.querySelector('.popup-add');
 const popupImage = document.querySelector('.popup-image');
 const formElement = document.querySelector('.popup__form');
 const formAddElement = document.querySelector('.popup__form-add');
+
+const addForm = new PopupWithForms({
+  formSelector: '.popup-add', 
+  handleFormSubmit: (formData) => {
+    // passamos o objeto formData contendo dados do formulário
+    // para uma nova instância da classe UserCard
+    const card = new Card(formData,
+      ".cards__item");
+    const cardElement = card.generateCard();
+    cardsList.setItem(cardElement);
+  }
+});
+addForm.setEventListeners();
 
 function addCard(card){
   const cardsContainer = document.querySelector('.cards');
@@ -34,13 +48,11 @@ function openPopupWindow(){
   
 }
 
+
 function openAddPopupWindow(){
-  setTimeout(() => {
-    page.classList.add('page__semitransparent');
-    popupAddWindow.classList.add('popup__opened');
-    console.log(popupAddWindow);
-  }, 250);
+  addForm.open();
 }
+
 
 function closePopupWindow(){
   popupWindow.classList.remove('popup__opened');
@@ -52,10 +64,11 @@ function closeAddPopupWindow(){
   page.classList.remove('page__semitransparent');
 }
 
+/*
 function closePopupImage(){
   popupImage.classList.remove('popup__opened');
   page.classList.remove('page__semitransparent');
-}
+}*/
 
 function handleProfileFormSubmit(evt) {
   
@@ -92,8 +105,8 @@ document.addEventListener("click", (e) => {
     page.classList.remove('page__semitransparent');
   }
   if (!isClosest && popupImage.classList.contains("popup__opened")){
-    popupImage.classList.remove('popup__opened');
-    page.classList.remove('page__semitransparent');
+    //popupImage.classList.remove('popup__opened');
+    //page.classList.remove('page__semitransparent');
   }
 });
 
@@ -102,11 +115,11 @@ function closeWindow(e){
     const popupEdit = document.querySelector(".popup-edit")
     const popupAdd = document.querySelector(".popup-add")
     if(popupEdit.classList.contains("popup__opened")){
-      closePopupWindow();
+      //closePopupWindow();
     }else if(popupAdd.classList.contains("popup__opened")){
-      closeAddPopupWindow();
+     // closeAddPopupWindow();
     }else if(popupImage.classList.contains("popup__opened")){
-      closePopupImage();
+      //closePopupImage();
     }
   }
 }
@@ -117,5 +130,5 @@ closeButton.addEventListener("click", closePopupWindow);
 closeButtonAdd.addEventListener("click", closeAddPopupWindow);
 formElement.addEventListener("submit", handleProfileFormSubmit);
 formAddElement.addEventListener("submit", handleLocationFormSubmit);
-closeButtonImage.addEventListener("click", closePopupImage);
+//closeButtonImage.addEventListener("click", closePopupImage);
 document.addEventListener("keydown", closeWindow);

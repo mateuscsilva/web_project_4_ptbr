@@ -3,6 +3,7 @@ import "./script/utils.js";
 import Card from "./script/card.js";
 import FormValidator from "./script/FormValidator.js";
 import Section from "./script/Section";
+import UserInfo from "./script/UserInfo";
 
 const initialCards = [
   {
@@ -43,23 +44,16 @@ const popupImage = document.querySelector('.popup-image');
 const formElement = document.querySelector('.popup__form');
 const formAddElement = document.querySelector('.popup__form-add');
 
-function initializeCards(initialCards){
-  const cardsContainer = new Section({
-    item: initialCards, 
-    renderer: (item)=>{
-      const newCard = new Card(item, ".cards__item");
-      const cardElement = newCard.generateCard();
-      cardsContainer.addItem(cardElement);
-    }},
-    '.cards');
-    cardsContainer.renderer();
-  //const cardsContainer = document.querySelector('.cards');
-  //initialCards.forEach(function(initialCard){
-  //  const newCard = new Card(initialCard, ".cards__item");
-  //  const cardElement = newCard.generateCard();
-  //  cardsContainer.append(cardElement);
-  //});
-}
+const cardsContainer = new Section({
+  item: initialCards, 
+  renderer: (item)=>{
+    const newCard = new Card(item, ".cards__item");
+    const cardElement = newCard.generateCard();
+    cardsContainer.addItem(cardElement);
+  }},
+  '.cards');
+cardsContainer.renderer();
+
 
 function initalizeFormValidation(){
   const data = {
@@ -77,6 +71,10 @@ function initalizeFormValidation(){
   addForm.enableValidation();
 }
 
-
-initializeCards(initialCards);
+//initializeCards(initialCards);
 initalizeFormValidation()
+
+let userInfo = new UserInfo({
+  nameSelector: '.profile__name', 
+  jobSelector: '.profile__work'
+});
