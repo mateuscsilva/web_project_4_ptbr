@@ -1,6 +1,7 @@
 import Card from "./card.js";
 import PopupWithForms from "./PopupWithForms";
 
+
 const page = document.querySelector('.page');
 const editButton = document.querySelector('.profile__edit-button');
 const addButton = document.querySelector('.profile__add-button');
