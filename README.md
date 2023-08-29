@@ -8,6 +8,8 @@ Projeto desenvolvido seguindo o que foi proposto no curso de Desenvolvimento Web
 1. HTML
 2. CSS
 3. JS
+4. NPM
+5. Webpack
 
 ## Funcionalidades
 1. Layout responsivo
