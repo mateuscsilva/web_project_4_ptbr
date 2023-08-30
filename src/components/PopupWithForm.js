@@ -16,9 +16,10 @@ export default class PopupWithForm extends Popup{
  }
 
  _setInputValues(formValues){
-  for(let i=0; i < this._inputList.length; i++){
-    this._inputList[i].placeholder = formValues[this._inputList[i].name];
-  }
+  this._inputList.forEach(function(input){
+    input.placeholder = formValues[input.name];
+    return input;
+  });
  }
 
  _reset(){

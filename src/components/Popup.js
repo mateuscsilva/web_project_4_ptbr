@@ -24,19 +24,26 @@ export default class Popup{
     }
   }
 
-  setEventListeners(){
-    this._closeButton.addEventListener("click", (e) => {
-      const isClosest = e.target.closest(this._selector);
+  _closeAfterButtonClick(e){
+    const isClosest = e.target.closest(this._selector);
       if (isClosest) {
         this.close();
       }
-    });
-    document.addEventListener("click", (e) => {
-      const isClosest = e.target.closest(this._selector);
+  }
+
+  _closeAfterClickOutsidePopup(e){
+    const isClosest = e.target.closest(this._selector);
       if (!isClosest) {
         this.close();
       }
-    });
+  }
+
+  setEventListeners(){
+    this._closeButton.addEventListener("click", this._closeAfterButtonClick.bind(this));
+    this._closeButton.removeEventListener("click", this._closeAfterButtonClick.bind(this));
+    document.addEventListener("click", this._closeAfterClickOutsidePopup.bind(this));
+    document.removeEventListener("click", this._closeAfterClickOutsidePopup.bind(this));
     document.addEventListener("keydown", this._handleEscClose.bind(this));
+    document.removeEventListener("keydown", this._handleEscClose.bind(this));
   }
 }

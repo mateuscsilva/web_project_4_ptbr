@@ -32,10 +32,8 @@ const initialCards = [
   }
 ];
 
-const page = document.querySelector('.page');
 const editButton = document.querySelector('.profile__edit-button');
 const addButton = document.querySelector('.profile__add-button');
-const popupImage = document.querySelector('.popup-image');
 
 const cardsContainer = new Section({
   item: initialCards, 
@@ -66,7 +64,7 @@ function initalizeFormValidation(){
 
 initalizeFormValidation()
 
-let userInfo = new UserInfo({
+const userInfo = new UserInfo({
   nameSelector: '.profile__name', 
   aboutSelector: '.profile__work'
 });

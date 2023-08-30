@@ -3,6 +3,8 @@
   font-family: InterRegular400, Arial, Helvetica, sans-serif;
   font-size: 18px;
   line-height: 22px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media screen and (max-width: 425px) {
