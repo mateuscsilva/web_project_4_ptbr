@@ -4,7 +4,7 @@
   max-height: 10vw;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
  .profile__image {
   max-width: 52vw;
   max-height: 40vw;

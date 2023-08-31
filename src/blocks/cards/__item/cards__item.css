@@ -6,7 +6,7 @@
   flex-direction: column;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   .cards__item {
     width: 90vw;
     height: 361px;

@@ -7,7 +7,7 @@
   opacity: 0.6;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   .popup__close-icon {
     width: 8vw;
     height: 8vw;

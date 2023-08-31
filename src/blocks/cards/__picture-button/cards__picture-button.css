@@ -8,7 +8,7 @@
   margin: 0;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   .cards__picture-button {
     max-height: 75%;
     height: 75%; 

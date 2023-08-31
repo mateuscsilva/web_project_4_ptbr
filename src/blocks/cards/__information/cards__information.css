@@ -9,7 +9,7 @@
   padding: 0 10px;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   .cards__information {
     max-height: 25%;
     height: 25%;
