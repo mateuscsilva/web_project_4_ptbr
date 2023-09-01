@@ -23,7 +23,7 @@ const initialCards = [
     link: "https://code.s3.yandex.net/web-code/latemar.jpg"
   },
   {
-    name: "Parque Nacional da Vanoise ",
+    name: "Parque Nacional da Vanoise",
     link: "https://code.s3.yandex.net/web-code/vanoise.jpg"
   },
   {

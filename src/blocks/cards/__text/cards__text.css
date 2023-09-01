@@ -1,11 +1,19 @@
 .cards__text {
-  max-width: 85%;
+  max-width: 80%;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   font-family: InterBlack900, Arial, Helvetica, sans-serif;
-  font-size: 24px;
-  line-height: 29px;
+  font-size: 20px;
+  line-height: 25px;
   justify-self: flex-start;
-  max-height: 8vw;
+  align-self: center;
+  max-height: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  .cards__text {
+    font-size: 14px;
+    line-height: 18px;
+  }
 }
