@@ -1,10 +1,15 @@
+import Api from "./Api";
 import PopupWithImage from "./PopupWithImage";
 
 class Card {
-  constructor(data, templateName){
+  constructor(data, templateName, api){
     this._name = data.name;
     this._link = data.link;
+    this._likes = data.likes;
+    this._id = data._id;
+    this._ownerId = data.owner._id;
     this._templateName = templateName;
+    this._api = api;
   }
 
   _openPicture(evt){
@@ -25,23 +30,39 @@ class Card {
     */
   }
 
-  _clickLikeButton(){
-    this.classList.toggle("cards__like-button-clicked");
+  _clickLikeButton(evt){
+    evt.target.classList.toggle("cards__like-button-clicked");
+    if(evt.target.classList.contains("cards__like-button-clicked")){
+      const card = this._api.likeCard(this._id);
+      card.then((res) =>{ 
+        evt.target.nextElementSibling.textContent = res.likes.length;
+      });
+    }else{
+      const card = this._api.dislikeCard(this._id);
+      card.then((res) =>{ 
+        evt.target.nextElementSibling.textContent = res.likes.length;
+      });
+    }
   }
   
   _clickDeleteButton(evt){
     evt.target.closest('.cards__item').remove();
   }
 
-  generateCard(){
+  generateCard(userId){
     const cardTemplate = document.querySelector('#cards__template').content;
     const newCard = cardTemplate.querySelector(this._templateName).cloneNode(true);
     newCard.querySelector('.cards__picture').src = this._link;
     newCard.querySelector('.cards__picture').alt = this._name;
     newCard.querySelector('.cards__text').textContent = this._name;
+    newCard.querySelector('.cards__like-count').textContent = this._likes.length;
     newCard.querySelector('.cards__picture-button').addEventListener("click", this._openPicture);
-    newCard.querySelector('.cards__delete-button').addEventListener("click", this._clickDeleteButton);
-    newCard.querySelector('.cards__like-button').addEventListener("click", this._clickLikeButton);
+    newCard.querySelector('.cards__like-button').addEventListener("click", this._clickLikeButton.bind(this));
+    if(userId == this._ownerId){
+      newCard.querySelector('.cards__delete-button').addEventListener("click", this._clickDeleteButton);
+    }else{
+      newCard.querySelector('.cards__delete-button').classList.add('cards__delete-button_disabled');
+    }
     return newCard;
   }
 }

@@ -45,6 +45,9 @@
 @import url('../blocks/cards/__delete-button/cards__delete-button.css');
 @import url('../blocks/cards/__picture-button/cards__picture-button.css');
 @import url('../blocks/cards/__delete-image/cards__delete-image.css');
+@import url('../blocks/cards/__like/cards__like.css');
+@import url('../blocks/cards/__like-count/cards__like-count.css');
+@import url('../blocks/cards/__delete-button/cards__delete-button_disabled.css');
 
 @import url('../blocks/footer/footer.css');
 @import url('../blocks/footer/__text/footer__text.css');

@@ -45,7 +45,10 @@
             </button>
             <div class="cards__information">
               <h3 class="cards__text"></h3>
-              <button class="cards__like-button"></button>
+              <div class="cards__like">
+                <button class="cards__like-button"></button>
+                <h4 class="cards__like-count">0</h4>
+              </div>
             </div>
           </div>
         </template>
@@ -75,7 +78,7 @@
             <input id="about-input" class="form__input popup__about" type="text" name="about"  minlength="2" maxlength="200" required/>
             <span class="about-input-error form__input-error">Preencha este campo</span>
           </div>
-          <input class="form__submit popup__submit-button" type="submit" value="Salvar"/>
+          <input class="form__submit popup__submit-button popup__edit-button" type="submit" value="Salvar"/>
         </form>
      </div>
     </div>
