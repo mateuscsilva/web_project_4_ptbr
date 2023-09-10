@@ -12,6 +12,7 @@ import Api from "./components/Api";
 
 const editButton = document.querySelector('.profile__edit-button');
 const addButton = document.querySelector('.profile__add-button');
+const avatarButton = document.querySelector('.profile__avatar-button');
 const profileImage = document.querySelector('.profile__image');
 const profileName = document.querySelector('.profile__name');
 const workName = document.querySelector('.profile__work');
@@ -56,10 +57,12 @@ function initalizeFormValidation(){
     errorClass: "form__error_visible",
     inputErrorClassActive: "form__input-error_active"
   } ;
-  const editForm = new FormValidator(data,".popup__form-edit")
+  const editForm = new FormValidator(data,".popup__form-edit");
   editForm.enableValidation();
-  const addForm = new FormValidator(data,".popup__form-add")
+  const addForm = new FormValidator(data,".popup__form-add");
   addForm.enableValidation();
+  const avatarForm = new FormValidator(data, ".popup__form-avatar");
+  avatarForm.enableValidation();
 }
 
 initalizeFormValidation();
@@ -68,10 +71,12 @@ initalizeFormValidation();
 const addForm = new PopupWithForm({
   formSelector: '.popup-add', 
   handleFormSubmit: (formData) => {
-    const card = new Card(formData,
-      ".cards__item", api);
-    const cardElement = card.generateCard(userInfo._id);
-    cardsContainer.addItem(cardElement);
+    api.addNewCard(formData)
+    .then((res) => {
+      const card = new Card(res, ".cards__item", api);
+      const cardElement = card.generateCard(userInfo._id);
+      cardsContainer.addItem(cardElement);
+    });
   }
 });
 addForm.setEventListeners();
@@ -86,6 +91,17 @@ const editForm = new PopupWithForm({
 editForm.setEventListeners();
 
 
+const avatarForm = new PopupWithForm({
+  formSelector: '.popup-avatar',
+  handleFormSubmit: (formData) => {
+    api.updateAvatarPicture(formData)
+    .then((res)=>{
+      document.querySelector('.profile__image').src = res.avatar;
+    });
+  }
+});
+avatarForm.setEventListeners();
+
 function openPopupWindow(){
   editForm._setInputValues(userInfo.getUserInfo());
   editForm.open();
@@ -96,6 +112,10 @@ function openAddPopupWindow(){
   addForm.open();
 }
 
+function openAvatarPopupWindow(){
+  avatarForm.open();
+}
 
 editButton.addEventListener("click", openPopupWindow);
 addButton.addEventListener("click", openAddPopupWindow);
+avatarButton.addEventListener("click", openAvatarPopupWindow);

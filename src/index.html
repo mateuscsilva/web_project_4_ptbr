@@ -14,7 +14,9 @@
     <main class="content">
 
       <section class="profile">
-        <img class="profile__image" src="<%=require('./images/profile_image.png')%>" alt="Imagem de perfil">
+        <button class="profile__avatar-button profile__image-edit">
+          <img class="profile__image" src="<%=require('./images/profile_image.png')%>" alt="Imagem de perfil">
+        </button>
         <div class="profile__information">
           <div class="profile__name-group">
             <h2 class="profile__name">Jacques Cousteau</h2>
@@ -61,6 +63,38 @@
       <h3 class="footer__text">&copy; 2023 Around The U.S.</h3>
     </footer>
   </div>
+
+  <div class="popup-avatar popup">
+    <button class="popup__close-button popup__close-edit-button">
+      <img class="popup__close-icon" src="<%=require('./images/close_icon.svg')%>" alt="Butão para fechar">
+    </button>
+    <div class="popup__container">
+      <div class="popup__items">
+        <h3 class="popup__title">Alterar a foto do perfil</h3>
+        <form class="form popup__form popup__form-avatar" novalidate>
+          <div class="form__group">
+            <input id="avatar-input" class="form__input popup__avatar" type="url" name="link" placeholder="URL da imagem" required/>
+            <span class="avatar-input-error form__input-error">Preencha este campo</span>
+          </div>
+          <input class="form__submit popup__submit-button popup__avatar-button" type="submit" value="Salvar"/>
+        </form>
+     </div>
+    </div>
+  </div>
+
+  <div class="popup-delete_card popup">
+    <button class="popup__close-button popup__close-delete-button">
+      <img class="popup__close-icon" src="<%=require('./images/close_icon.svg')%>" alt="Butão para fechar">
+    </button>
+    <div class="popup__container popup__container-delete">
+      <div class="popup__items">
+        <h3 class="popup__title">Tem certeza?</h3>
+        <form class="form popup__form popup__form-delete" novalidate>
+          <input class="form__submit popup__submit-button popup__delete-button" type="submit" value="Sim"/>
+        </form>
+     </div>
+    </div>
+  </div>  
 
   <div class="popup-edit popup">
     <button class="popup__close-button popup__close-edit-button">

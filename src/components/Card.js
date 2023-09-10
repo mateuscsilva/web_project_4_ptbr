@@ -1,4 +1,5 @@
 import Api from "./Api";
+import PopupWithForm from "./PopupWithForm";
 import PopupWithImage from "./PopupWithImage";
 
 class Card {
@@ -46,7 +47,19 @@ class Card {
   }
   
   _clickDeleteButton(evt){
-    evt.target.closest('.cards__item').remove();
+    const self = this;
+    const deleteForm = new PopupWithForm({
+      formSelector: '.popup-delete_card',
+      handleFormSubmit: (formData) => {
+        console.log(this);
+        self._api.deletePicture(this._id)
+        .then((res)=>{
+          evt.target.closest('.cards__item').remove();
+        });
+      }
+    });
+    deleteForm.setEventListeners();
+    deleteForm.open();
   }
 
   generateCard(userId){
@@ -59,7 +72,7 @@ class Card {
     newCard.querySelector('.cards__picture-button').addEventListener("click", this._openPicture);
     newCard.querySelector('.cards__like-button').addEventListener("click", this._clickLikeButton.bind(this));
     if(userId == this._ownerId){
-      newCard.querySelector('.cards__delete-button').addEventListener("click", this._clickDeleteButton);
+      newCard.querySelector('.cards__delete-button').addEventListener("click", this._clickDeleteButton.bind(this));
     }else{
       newCard.querySelector('.cards__delete-button').classList.add('cards__delete-button_disabled');
     }

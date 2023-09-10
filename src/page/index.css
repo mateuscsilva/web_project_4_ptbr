@@ -26,10 +26,12 @@
 @import url('../blocks/popup/__title/popup__title.css');
 @import url('../blocks/popup/__text/popup__text.css');
 @import url('../blocks/popup/__display-image/popup__display-image.css');
+@import url('../blocks/popup/__container-delete/popup__container-delete.css');
 
 @import url('../blocks/profile/profile.css');
 @import url('../blocks/profile/__add-button/profile__add-button.css');
 @import url('../blocks/profile/__edit-button/profile__edit-button.css');
+@import url('../blocks/profile/__image-edit/profile__image-edit.css');
 @import url('../blocks/profile/__image/profile__image.css');
 @import url('../blocks/profile/__information/profile__information.css');
 @import url('../blocks/profile/__name-group/profile__name-group.css');
