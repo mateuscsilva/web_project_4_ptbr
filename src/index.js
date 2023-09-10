@@ -36,7 +36,6 @@ const userInfo = new UserInfo({
 }, initialUser._id);
 
 const initialCards = await api.getInitialCards();
-
 const cardsContainer = new Section({
   item: initialCards, 
   renderer: (item)=>{

@@ -15,9 +15,16 @@
   }
 }
   
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 768px) {
     .popup__container-delete {
-      width: 40vw;
-      height: 20vw;
+      width: 88vw;
+      height: 30vw;
     } 
- } 
+ }
+ 
+ @media screen and (max-width: 600px) {
+  .popup__container-delete {
+    width: 88vw;
+    height: 40vw;
+  } 
+} 
